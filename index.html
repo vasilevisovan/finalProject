@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Launcher</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: url('wallpaper.jpg') center/cover no-repeat; 
+            background-size: cover; /* Adjusted to make the image fit the background */
+            color: white;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 40px;/* Adjusted font size */
+            font-family: 'Arial', sans-serif; /* Changed font family */
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Added text shadow */
+        }
+        button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid #fff;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+        /* Added style for the input field */
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            opacity: 0.7; /* Set the opacity */
+        }
+        label {
+    font-size: 20px; /* Set the desired font size */
+}
+    </style>
+</head>
+<body>
+    
+    <div class="title">&#9733;&#9733;BATTLE OF THE SKY&#9733;&#9733; <br> BE THE MASTER OF THE CLOUDS </div>
+
+    <!-- Added form element with input field for player's name -->
+    <form onsubmit="startGame(); return false;">
+        <label for="playerName">Enter Player:</label>
+        <input type="text" id="playerName" required>
+        <button type="submit">PLAY THE GAME</button>
+    </form>
+
+    <script>
+        function startGame() {
+            const playerName = document.getElementById('playerName').value;
+            
+            // Store the player's name in localStorage for access on the next page
+            localStorage.setItem('playerName', playerName);
+
+            // Change the URL to the actual GitHub Pages URL of your game
+            window.location.href = `./battleofthesky.html`;
+        }
+    </script>
+</body>
+</html>

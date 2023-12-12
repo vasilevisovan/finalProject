@@ -1,0 +1,151 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(wallpaper.jpg);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+#playerNameDisplay {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    font-size: 24px;
+    background-color: transparent;
+    color: #fff;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center; /* Center the boards horizontally */
+    align-items: center;
+    height: 100vh;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    gap: 1px;
+    background-color: #eee;
+    border: 1px solid #999;
+    margin: 10px;
+    opacity: 0.4;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.airplane {
+    background-color: #eee; /* Set to the background color of the board to make airplanes invisible */
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.airplane .body {
+    width: 100%;
+    height: 50%;
+}
+
+.airplane .tail {
+    width: 100%;
+    height: 30%;
+}
+
+.airplane .wings {
+    width: 50%;
+    height: 20%;
+}
+
+/* Adjustments for the number of bricks in each part */
+.airplane .brick {
+    width: 20%;
+    height: 50%;
+}
+
+.green-brick {
+    background-color: #00ff00; /* Green color for missed hits */
+}
+
+.red-brick {
+    background-color: #ff0000; /* Red color for successful hits */
+}
+
+.blue-head {
+    background-color: #3498db; /* Blue color for the head of the airplane when hit */
+    color: #fff; /* Text color for better visibility on the blue background */
+}
+
+.dark-blue-head {
+    background-color: #001f3f; /* Dark blue color for the head and surrounding cells of the airplane when hit */
+    color: #fff; /* Text color for better visibility on the dark blue background */
+}
+
+#restart-button {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: 2px solid white;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px solid #0077cc;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pulsate {
+    animation: pulsateAnimation 1s infinite alternate;
+}
+
+@keyframes pulsateAnimation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+.weather-widget {
+    position: fixed;
+    color: white;
+    top: 10px;
+    right: 10px;
+    width: 5cm;
+    height: 2cm;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.weather-logo {
+    font-size: 26px;
+}
+
+.weather-text {
+    margin-top: 5px;
+}
+
+.date-label {
+    margin-top: 10px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Planes Game</title>
+    <link rel="stylesheet" href="battleofthesky.css">
+ 
+</head>
+<body>
+
+  
+<div id="playerNameDisplay"></div>
+
+<div class="container">
+    <div id="board1" class="board"></div>
+    <div id="board2" class="board"></div>
+</div>
+
+<div id="restart-button" onclick="restartGame()">Restart Game</div>
+<div id="restart-button" onclick="BattlePlanesGame.restartGame()">Restart Game</div>
+
+<div id="weather-widget" class="weather-widget">
+    <div id="weather-logo" class="weather-logo"></div>
+    <div id="weather-text" class="weather-text"></div>
+</div>
+
+<script src="battleofthesky.js"></script>
+
+<script>
+  // Retrieve player name from localStorage
+  const playerName = localStorage.getItem('playerName');
+
+  // Display player name on the page
+  if (playerName) {
+      const playerNameDisplay = document.getElementById('playerNameDisplay');
+      playerNameDisplay.innerHTML = `<p>Welcome ${playerName}!</p>`;
+  }
+</script>
+
+</body>
+</html>
